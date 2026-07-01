@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konto löschen – FairwayCount</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; color: #1f2937; line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+    header { margin-bottom: 48px; }
+    .app-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 16px; margin-bottom: 24px; }
+    h1 { font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .subtitle { color: #6b7280; font-size: 15px; }
+    section { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; margin-bottom: 16px; }
+    h2 { font-size: 17px; font-weight: 600; color: #111827; margin-bottom: 12px; }
+    p { color: #374151; font-size: 15px; margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+    ol { color: #374151; font-size: 15px; padding-left: 20px; }
+    ol li { margin-bottom: 8px; }
+    .highlight { background: #fef9c3; border: 1px solid #fde68a; border-radius: 10px; padding: 16px 18px; margin-top: 12px; }
+    .highlight p { color: #92400e; margin: 0; }
+    .contact-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; margin-top: 12px; }
+    a { color: #2563eb; text-decoration: none; }
+    footer { text-align: center; color: #9ca3af; font-size: 13px; margin-top: 48px; padding-top: 24px; border-top: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="app-badge"><span style="font-size:28px">⛳</span><span style="font-size:16px;font-weight:600">FairwayCount</span></div>
+    <h1>Konto und Daten löschen</h1>
+    <p class="subtitle">Anleitung zur Löschung deines FairwayCount-Kontos und aller zugehörigen Daten</p>
+  </header>
+
+  <section>
+    <h2>📱 Option 1 — Direkt in der App</h2>
+    <p>Du kannst dich jederzeit in der App abmelden und die Löschung beantragen:</p>
+    <ol>
+      <li>App öffnen → <strong>Einstellungen</strong> (⚙️ oben rechts)</li>
+      <li>Abschnitt <strong>Konto</strong> → <strong>Abmelden</strong></li>
+      <li>Für die vollständige Datenlöschung sende uns eine E-Mail (siehe unten)</li>
+    </ol>
+    <div class="highlight">
+      <p>⚠️ Beim Abmelden bleiben deine Runden lokal auf dem Gerät erhalten. Cloud-Daten werden erst nach expliziter Löschanfrage per E-Mail entfernt.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>✉️ Option 2 — Löschung per E-Mail beantragen</h2>
+    <p>Sende eine E-Mail mit dem Betreff <strong>„Konto löschen"</strong> an:</p>
+    <div class="contact-card">
+      <p><a href="mailto:nbergt@gmail.com?subject=Konto%20l%C3%B6schen%20%E2%80%93%20FairwayCount">nbergt@gmail.com</a></p>
+    </div>
+    <p style="margin-top:12px">Bitte gib in der E-Mail die E-Mail-Adresse deines Google-Kontos an, mit dem du dich in FairwayCount angemeldet hast. Wir löschen innerhalb von <strong>30 Tagen</strong>:</p>
+    <ol>
+      <li>Dein Firebase-Authentifizierungskonto</li>
+      <li>Alle in der Cloud gespeicherten Runden und Daten</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🗑️ Was wird gelöscht</h2>
+    <ol>
+      <li><strong>Firebase-Konto</strong> — Konto-Kennung (UID) und E-Mail-Adresse</li>
+      <li><strong>Cloud-Runden</strong> — alle synchronisierten Golfrunden und Spieldaten</li>
+      <li><strong>RevenueCat</strong> — Abo-Verlauf (anonyme ID)</li>
+    </ol>
+    <p style="margin-top:12px"><strong>Lokal gespeicherte Daten</strong> (Runden, Einstellungen auf deinem Gerät) werden durch die App-Deinstallation entfernt.</p>
+  </section>
+
+  <section>
+    <h2>✉️ Kontakt</h2>
+    <div class="contact-card">
+      <p><strong>FairwayCount</strong><br>
+      Entwickler: Thomas Berger<br>
+      E-Mail: <a href="mailto:nbergt@gmail.com">nbergt@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 FairwayCount · <a href="privacy-policy.html">Datenschutzerklärung</a></p>
+  </footer>
+</div>
+</body>
+</html>
