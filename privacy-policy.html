@@ -31,24 +31,27 @@
   <header>
     <div class="app-badge"><span style="font-size:28px">⛳</span><span style="font-size:16px;font-weight:600">FairwayCount</span></div>
     <h1>Datenschutzerklärung</h1>
-    <p class="subtitle">Diese Erklärung gilt für die FairwayCount App (Android &amp; iOS)</p>
-    <span class="updated">Zuletzt aktualisiert: 30. Juni 2026</span>
+    <p class="subtitle">Diese Erklärung gilt für die FairwayCount App für Android und die dazugehörige Wear-OS-App für Smartwatches</p>
+    <span class="updated">Zuletzt aktualisiert: 7. September 2026</span>
   </header>
   <section>
     <h2>📋 Überblick</h2>
     <p>FairwayCount ist eine Golf-Schlag-Counter App. Der Schutz deiner Daten ist uns wichtig.</p>
-    <div class="highlight"><p>✓ Ohne Anmeldung werden deine Golf-Spieldaten (Runden, Schläge, Mitspieler, Einstellungen) ausschliesslich lokal auf deinem Gerät gespeichert. Erst wenn du dich freiwillig anmeldest, werden deine Runden zusätzlich in deinem privaten Cloud-Bereich gesichert (siehe „Cloud-Synchronisation").</p></div>
-    <p style="margin-top:12px">Für einzelne Funktionen werden technische Daten an Dienstleister übermittelt (Karten, Abo-Verwaltung, Absturzberichte) — diese sind unten transparent aufgeführt.</p>
+    <div class="highlight"><p>✓ Ohne Anmeldung werden deine Golf-Spieldaten (Runden, Schläge, Trainingsergebnisse, Mitspieler, Einstellungen) ausschliesslich lokal auf deinem Gerät gespeichert und nicht an uns übertragen. Erst wenn du dich freiwillig anmeldest, werden deine Runden zusätzlich in deinem privaten Cloud-Bereich gesichert (siehe „Cloud-Synchronisation").</p></div>
+    <p style="margin-top:12px">Davon zu unterscheiden sind Funktionen, bei denen die App Daten von Dienstleistern <strong>abruft</strong> oder technische Daten an sie übermittelt: Platzkatalog, Karten, Werbung, Abo-Verwaltung und Absturzberichte. Dabei wird technisch bedingt jeweils deine IP-Adresse sichtbar — auch ohne Anmeldung. Alle diese Dienste sind unten einzeln aufgeführt.</p>
   </section>
   <section>
     <h2>💾 Lokal gespeicherte Daten</h2>
     <p>Folgende Daten werden <strong>ausschliesslich lokal</strong> auf deinem Gerät gespeichert:</p>
     <ul>
       <li>Gespielte Runden (Datum, Platz, Schlaganzahl, Schlag-Lagen, verwendete Schläger und -Statistiken pro Loch)</li>
-      <li>Dein Profil (Name, Handicap) — frei wählbar, keine Verifizierung</li>
+      <li>Dein Profil (Name) — frei wählbar, keine Verifizierung</li>
+      <li>Handicap-Einträge, die du selbst erfasst (Wert und Datum), sowie das daraus berechnete Handicap</li>
+      <li>Trainingsprotokolle (durchgeführte Übungen, deine erfassten Ergebnisse, Datum)</li>
+      <li>Dein Schlägerset</li>
       <li>Mitspieler, die du anlegst (Name, optional Handicap)</li>
       <li>Ausgewählter Golfplatz und eigene Plätze</li>
-      <li>App-Einstellungen und Präferenzen</li>
+      <li>App-Einstellungen, Sprachwahl und Präferenzen</li>
       <li>GPS-Koordinaten einzelner Schläge (nur wenn GPS-Tracking aktiviert, optional)</li>
     </ul>
     <p style="margin-top:12px">Diese Daten können jederzeit in der App gelöscht werden und werden mit der Deinstallation entfernt. Bei der Eingabe von Mitspieler-Namen bist du dafür verantwortlich, nur Daten zu erfassen, zu denen du berechtigt bist.</p>
@@ -69,8 +72,20 @@
       <li><strong>Esri / ArcGIS</strong> (Satellitenbilder) — <a href="https://www.esri.com/en-us/privacy/overview">esri.com/privacy</a></li>
       <li><strong>OpenStreetMap Foundation</strong> (Kartenüberlagerung) — <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org</a></li>
       <li><strong>unpkg (Cloudflare CDN)</strong> (Karten-Bibliothek Leaflet)</li>
+      <li><strong>swisstopo</strong> (Luftbilder der Lochkarte in der Wear-OS-App) — <a href="https://www.geo.admin.ch/de/rechtliches">geo.admin.ch</a></li>
     </ul>
-    <p style="margin-top:12px">Karten werden nur geladen, wenn du eine Kartenansicht öffnest.</p>
+    <p style="margin-top:12px">Karten werden nur geladen, wenn du eine Kartenansicht öffnest. Die Wear-OS-App lädt die Luftbilder direkt bei swisstopo und legt sie zwischengespeichert auf der Uhr ab; ausserhalb der Schweiz und ohne Verbindung zeigt sie stattdessen eine reine Schlag-Ansicht ohne Kartenmaterial.</p>
+  </section>
+  <section>
+    <h2>⛳ Platzkatalog (auch ohne Konto)</h2>
+    <p>Die App bringt einen Katalog von Golfplätzen mit. Damit neue und korrigierte Plätze auch ohne App-Update ankommen, prüft die App beim Start, ob es eine neuere Fassung des Katalogs gibt, und lädt gegebenenfalls die Änderungen nach. Der Katalog liegt in einer Firebase-Datenbank (Cloud Firestore) und ist <strong>öffentlich lesbar</strong>.</p>
+    <ul>
+      <li>Dieser Abruf findet bei <strong>jedem App-Start</strong> statt — unabhängig davon, ob du angemeldet bist.</li>
+      <li>Es werden dabei <strong>keine</strong> Spiel-, Standort- oder Nutzerdaten von dir übertragen. Die App fragt nur ab, ob und was sich am Katalog geändert hat.</li>
+      <li>Technisch bedingt ist bei diesem Abruf — wie bei jedem Zugriff auf einen Server — deine IP-Adresse für Google sichtbar.</li>
+      <li>Der zuletzt geladene Katalog wird auf deinem Gerät zwischengespeichert, damit die App auch ohne Internetverbindung funktioniert.</li>
+    </ul>
+    <p style="margin-top:12px">Firebase/Google Datenschutz: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></p>
   </section>
   <section>
     <h2>👤 Konto (optional)</h2>
@@ -86,14 +101,25 @@
     <p>Wenn — und nur wenn — du angemeldet bist, werden deine <strong>gespielten Runden</strong> in deinem privaten Bereich der Firebase-Datenbank (Cloud Firestore) gespeichert, damit sie geräteübergreifend verfügbar sind. Übertragen werden dabei die Rundendaten: Platz, Datum, Schläge pro Loch, Schlag-Lagen/-Statistiken, verwendete Schläger, GPS-Schlagpositionen (sofern erfasst) sowie Mitspieler-Namen, die du der Runde zugeordnet hast.</p>
     <ul>
       <li>Die Daten sind strikt deinem Konto zugeordnet; nur du hast über deine Anmeldung Zugriff (serverseitig per Security Rules erzwungen).</li>
-      <li>Ohne Anmeldung bleibt alles ausschliesslich lokal — es findet keine Übertragung statt.</li>
+      <li>Ohne Anmeldung werden <strong>keine Spieldaten übertragen</strong> — sie bleiben ausschliesslich auf deinem Gerät. Der Abruf des Platzkatalogs weiter oben ist davon unabhängig und sendet keine Daten über dich.</li>
       <li>Beim Abmelden bleiben deine Runden lokal auf dem Gerät erhalten.</li>
     </ul>
     <p style="margin-top:12px">Serverstandort: Firebase/Google-Rechenzentren (Region EU, sofern bei der Einrichtung gewählt). Eine Löschung deiner Cloud-Daten ist auf Anfrage über die Kontakt-E-Mail möglich.</p>
   </section>
   <section>
+    <h2>⌚ Wear-OS-App (Smartwatch)</h2>
+    <p>Zur App gehört eine eigenständige App für Wear-OS-Uhren. Sie funktioniert <strong>auch ohne Handy</strong>: Schläge zählen, Runde speichern und die Statistik der Runde laufen vollständig auf der Uhr.</p>
+    <ul>
+      <li><strong>Auf der Uhr gespeichert:</strong> die laufende und die abgeschlossenen Runden, deine Einstellungen sowie — bei aktiviertem GPS — die Positionen deiner Schläge.</li>
+      <li><strong>Standort:</strong> Die Uhr bestimmt deine Position mit ihrem eigenen GPS-Empfänger, und nur wenn du die Standortfreigabe erteilt und die Aufzeichnung aktiviert hast.</li>
+      <li><strong>Übertragung zum Handy:</strong> Abgeschlossene Runden werden an die Handy-App übergeben, damit du sie dort im Verlauf siehst. Umgekehrt fragt die Uhr beim Handy ab, ob ein Pro-Abo aktiv ist, und übernimmt dein Schlägerset. Diese Übertragung läuft über die Geräte-Kopplung von Google Play Services <strong>zwischen deinen eigenen beiden Geräten</strong> und ist auf Apps mit identischer Signatur beschränkt.</li>
+      <li><strong>Kartenmaterial:</strong> siehe Abschnitt „Karten" (swisstopo).</li>
+    </ul>
+    <p style="margin-top:12px">Die Uhr sendet <strong>keine</strong> Spieldaten an uns oder an Dritte. Sie zeigt auch keine Werbung.</p>
+  </section>
+  <section>
     <h2>💳 In-App Käufe & Abonnements</h2>
-    <p>Zahlungen werden über Google Play (bzw. den App Store) abgewickelt. Zur Abo-Verwaltung nutzen wir <strong>RevenueCat</strong>, das folgende Daten erhält:</p>
+    <p>Zahlungen werden über Google Play abgewickelt. Zur Abo-Verwaltung nutzen wir <strong>RevenueCat</strong>, das folgende Daten erhält:</p>
     <ul>
       <li>Anonyme Benutzer-ID (keine E-Mail, kein Name)</li>
       <li>Kauf- und Abonnement-Status</li>
@@ -132,7 +158,7 @@
     <div class="contact-card">
       <p><strong>FairwayCount</strong><br>
       Entwickler: Thomas Berger<br>
-      GitHub: <a href="https://github.com/nbergt/fairwaycount">github.com/nbergt/fairwaycount</a><br>
+      Web: <a href="https://nbergt.github.io/fairwaycount/">nbergt.github.io/fairwaycount</a><br>
       E-Mail: <a href="mailto:nbergt@gmail.com">nbergt@gmail.com</a></p>
     </div>
   </section>
